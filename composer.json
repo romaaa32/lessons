@@ -1,0 +1,16 @@
+{
+    "name": "mama/lessons",
+    "authors": [
+        {
+            "name": "Roman Slipchenko",
+            "email": "romaslip32@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine",
+            "Engine\\DI\\": "engine/DI"
+        }
+    }
+}
