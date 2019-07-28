@@ -4,6 +4,7 @@
 namespace Engine\Core\Database;
 
 use PDO;
+use Engine\Core\Config\Config;
 
 class Connection
 {
@@ -20,10 +21,11 @@ class Connection
 
     /**
      * @return $this
+     * @throws \Exception
      */
     public function connect()
     {
-        $config = require_once 'config.php';
+        $config = Config::file('database');
 
         $dsn = "mysql:host={$config['host']};dbname={$config['db_name']};charset={$config['charset']}";
 
