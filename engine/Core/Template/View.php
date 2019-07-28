@@ -6,9 +6,17 @@ namespace Engine\Core\Template;
 class View
 {
 
+    /**
+     * @var Theme
+     */
+    protected $theme;
+
+    /**
+     * View constructor.
+     */
     public function __construct()
     {
-
+        $this->theme = new Theme();
     }
 
     /**
@@ -26,6 +34,7 @@ class View
             );
         }
 
+        $this->theme->setData($vars);
         extract($vars);
 
         ob_start();

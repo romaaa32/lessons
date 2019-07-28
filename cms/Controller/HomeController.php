@@ -11,6 +11,9 @@ class HomeController extends CmsController
         $this->view->render('index', $data);
     }
 
+    /**
+     * @param $id
+     */
     public function news($id)
     {
         echo $id;
