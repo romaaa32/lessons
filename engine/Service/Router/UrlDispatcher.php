@@ -70,6 +70,11 @@ class UrlDispatcher
         return $this->doDispatch($method, $uri);
     }
 
+    /**
+     * @param $method
+     * @param $uri
+     * @return DispatchedRoute
+     */
     private function doDispatch($method, $uri)
     {
         foreach ($this->routes($method) as $route => $controller)

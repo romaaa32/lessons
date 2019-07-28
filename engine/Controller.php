@@ -2,6 +2,8 @@
 
 namespace Engine;
 
+use Engine\DI\DI;
+
 /**
  * Class Controller
  * @package Engine
@@ -10,10 +12,18 @@ class Controller
 {
 
     /**
-     * Controller constructor.
-     * @param $di Engine\DI\DI
+     * @var DI
      */
-    public function __construct($di)
+    protected $di;
+
+    protected $db;
+
+    /**
+     * Controller constructor.
+     * @param DI $di
+     */
+    public function __construct(DI $di)
     {
+        $this->di = $di;
     }
 }
