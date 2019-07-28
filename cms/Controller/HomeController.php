@@ -3,7 +3,7 @@
 
 namespace Cms\Controller;
 
-class HomeController extends CmsController
+class HomeController extends AdminController
 {
     public function index()
     {
