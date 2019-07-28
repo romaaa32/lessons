@@ -8,9 +8,10 @@ use Engine\DI\DI;
 class AdminController extends Controller
 {
     /**
-     * @var
+     * @var Auth
      */
     protected $auth;
+
     /**
      * AdminController constructor.
      * @param DI $di
@@ -21,9 +22,15 @@ class AdminController extends Controller
 
         $this->auth = new Auth();
 
-        if (!$this->auth->authorized and $this->request->server['REQUEST_URI'] !== '/admin/login') {
+        $this->chekAutorization();
+    }
+
+    public function chekAutorization()
+    {
+        if (!$this->auth->authorized()) {
             header('Location: /admin/login', true, 301);
             exit;
         }
     }
+
 }
