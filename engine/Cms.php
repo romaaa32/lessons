@@ -3,8 +3,10 @@
 
 namespace Engine;
 
+use Engine\Helper\Common;
+
 /**
- * Class Cms
+ * Class cms
  * @package Engine
  */
 class Cms
@@ -14,7 +16,7 @@ class Cms
     public $router;
 
     /**
-     * Cms constructor.
+     * cms constructor.
      * @param $di
      */
     public function __construct($di)
@@ -26,6 +28,13 @@ class Cms
     public function run()
     {
         $this->router->add('home', '/', 'HomeController:index');
-        print_r($this->di);
+        $this->router->add('product', '/user/12', 'ProductController:index');
+//        print_r($this->di);
+//        print_r($_SERVER);
+
+        $routerDispatch = $this->router->dispatch(Common::getMethod(), Common::getPathUrl());
+
+        print_r($routerDispatch);
+
     }
 }
