@@ -21,6 +21,11 @@ class Auth implements AuthInterface
         return $this->authorized;
     }
 
+    public function setAuthorized()
+    {
+        $this->authorized = true;
+    }
+
     /**
      * @return mixed
      */
@@ -36,18 +41,12 @@ class Auth implements AuthInterface
     {
         Cookie::set('auth_authorized', true);
         Cookie::set('auth_user', $user);
-
-        $this->authorized = true;
-        $this->hash_user = $user;
     }
 
     public function unAuthorize()
     {
         Cookie::delete('auth_authorized');
         Cookie::delete('auth_user');
-
-        $this->authorized = false;
-        $this->user = null;
     }
 
     /**
