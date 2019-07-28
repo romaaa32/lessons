@@ -38,7 +38,7 @@ class DI
 
     /**
      * @param $key
-     * @return bool
+     * @return mixed|null
      */
     public function has($key)
     {
