@@ -42,7 +42,6 @@ class Connection
     public function execute($sql, $values = [])
     {
         $sth = $this->link->prepare($sql);
-
         return $sth->execute($values);
     }
 
@@ -56,7 +55,6 @@ class Connection
         $sth = $this->link->prepare($sql);
 
         $sth->execute($values);
-
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result === false) {
