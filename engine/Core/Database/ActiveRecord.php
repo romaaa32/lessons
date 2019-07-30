@@ -47,7 +47,7 @@ trait ActiveRecord
      */
     public function save() {
         $properties = $this->getIssetProperties();
-//        print_r($properties);exit;
+
         try {
             if (isset($this->id)) {
                 $this->db->execute(
@@ -98,7 +98,6 @@ trait ActiveRecord
     {
         $reflection = new ReflectionClass($this);
         $properties = $reflection->getProperties(ReflectionProperty::IS_PUBLIC);
-        print_r($properties);
         return $properties;
     }
 }

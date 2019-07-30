@@ -29,7 +29,7 @@ class AdminController extends Controller
 
     }
 
-    public function chekAutorization()
+    public function checkAuthorization()
     {
     }
 
